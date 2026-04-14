@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "image-processor-gui",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/Users/somya/Desktop/Image Processing App - cpp/gui.py"],
+      "port": 8765
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmake -B build)",
+      "Bash(cmake --build build)",
+      "Bash(make app:*)",
+      "Bash(./build/run_tests --gtest_color=yes)",
+      "Bash(./build/image_processor invalid:*)",
+      "Bash(python3 /tmp/create_test_image.py)",
+      "Bash(./build/image_processor /tmp/test_image.png grayscale /tmp/result_grayscale.png)",
+      "Bash(./build/image_processor /tmp/test_image.png sepia /tmp/result_sepia.png)",
+      "Bash(./build/image_processor /tmp/test_image.png brightness /tmp/result_bright.png delta=50)",
+      "Bash(./build/image_processor /tmp/test_image.png contrast /tmp/result_contrast.png factor=1.5)",
+      "Bash(./build/image_processor /tmp/test_image.png gaussian_blur /tmp/result_blur.png kernelSize=5 sigma=1.5)",
+      "Read(//tmp/**)",
+      "Bash(python3 gui.py)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(./build/run_tests)",
+      "Bash(grep -c '^TEST\\(' tests/*_tests.cpp)",
+      "Bash(echo \"Total test suites: $\\(grep -c '^TEST\\(' tests/*_tests.cpp\\)\")",
+      "Bash(grep -c '^TEST.*Pixel' tests/*_tests.cpp)",
+      "Bash(echo \"Pixel tests:       $\\(grep -c '^TEST.*Pixel' tests/*_tests.cpp\\)\")",
+      "Bash(grep -c '^TEST.*Operation' tests/*_tests.cpp)"
+    ]
+  }
+}
