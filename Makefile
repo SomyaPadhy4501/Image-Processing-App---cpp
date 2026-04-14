@@ -1,5 +1,5 @@
 CXX = clang++
-CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -Iinclude -Ilib
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -Iinclude -isystem lib
 LDFLAGS =
 
 BUILD_DIR = build

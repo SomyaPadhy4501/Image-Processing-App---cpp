@@ -1,0 +1,26 @@
+# Build artifacts
+build/
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Temporary processing files
+*.tmp
+/tmp/
+
+# Editor & IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled objects
+*.o
+*.a
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo

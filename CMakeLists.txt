@@ -14,21 +14,18 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-# Collect source files (excluding main.cpp for library)
-file(GLOB_RECURSE LIB_SOURCES
-    "src/model/*.cpp"
-    "src/operations/*.cpp"
-    "src/command/*.cpp"
-    "src/factory/*.cpp"
-    "src/builder/*.cpp"
-    "src/controller/*.cpp"
-    "src/view/*.cpp"
+# Core library sources (all other modules are header-only)
+set(LIB_SOURCES
+    src/model/ImageModel.cpp
 )
 
 # Core library (used by both app and tests)
 add_library(imageprocessor_lib STATIC ${LIB_SOURCES})
 target_include_directories(imageprocessor_lib PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+# Treat lib/ as system headers to suppress third-party warnings (stb_image)
+target_include_directories(imageprocessor_lib SYSTEM PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/lib
 )
 

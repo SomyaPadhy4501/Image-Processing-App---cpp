@@ -21,7 +21,9 @@
       "Bash(echo \"Total test suites: $\\(grep -c '^TEST\\(' tests/*_tests.cpp\\)\")",
       "Bash(grep -c '^TEST.*Pixel' tests/*_tests.cpp)",
       "Bash(echo \"Pixel tests:       $\\(grep -c '^TEST.*Pixel' tests/*_tests.cpp\\)\")",
-      "Bash(grep -c '^TEST.*Operation' tests/*_tests.cpp)"
+      "Bash(grep -c '^TEST.*Operation' tests/*_tests.cpp)",
+      "Bash(make clean:*)",
+      "Bash(make test:*)"
     ]
   }
 }
